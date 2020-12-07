@@ -1,24 +1,24 @@
 # CISC849Final
-This repo is used for final project of CISC849, a grad-level course offered in University of Delaware. The group member is Matt Leinhauser and Eric (Yifan) Zhang.
+This repo is used for final project of CISC849, a graduate level seminar offered at the University of Delaware. Our group consists of Matt Leinhauser and Eric (Yifan) Zhang.
 
 ### Context of this project - TPOT
-This course requires each group reading a paper (or article) related to data science and presenting it formally to the entire class. We have chosen the article about TPOT [1], which is a Python Automated Machine Learning tool that optimizes machine learning pipelines using genetic programming.
+This course requires each group reading a paper (or article) related to data science and presenting it formally to the entire class. We chose an article about TPOT [1], which is a Python Automated Machine Learning tool that optimizes machine learning pipelines using genetic programming.
 
-We uploaded the slides we used for the presentation, check `TPOT Paper presentation.pptx` in this repo. In the slides, we described and visualized the technique involved in TPOT.
+We uploaded the slides we used for the presentation, check `TPOT Paper presentation.pptx` in this repo. In the slides, we describe and visualize the main technique involved in TPOT.
 
 ### Project idea
-We were also required to conduct a final project for this course. The final project should be some interesting tasks about data science. We need to firstly present a proposal about the final project, identifying the task, dataset, tentative technique, and timeline.
+We were also required to conduct a final project for this course. The final project needs to relate interesting tasks to data science. First, we had to present a proposal about the final project. In this proposal, we identified the task, dataset, tentative technique/ML algorithms, and timeline.
 
 We checked Kaggle and found a dataset called `COVID-19 Airline Flight Delays and Cancellations - Which airlines have been the most affected by COVID-19?`[2]. It has the following description:
 
 >The United States Department of Transportation's (DOT) Bureau of Transportation Statistics tracks the on-time performance of domestic flights operated by large air carriers. The data collected is from January - June 2020 and contains relevant flight information (on-time, delayed, canceled, diverted flights) from the Top 10 United States flight carriers for 11 million flights.
 
-As COVID19 is still impacting the entire world (till this Readme was written), this dataset provides some insights into how it affect the airline industry. We found this topic is interesting and after discussion, we planned to use this dataset and try to predict the flight cancellations based on the information contained in this dataset.
+As COVID-19 is still impacting the entire world (at the time of writing, December 2020), this dataset provides some insights into how it affect the airline industry. We found this topic interesting and after discussion, we planned to use this dataset to try to predict the flight cancellations based on the information contained in this dataset.
 
-We have presented TPOT as a useful automated tool to generate ML pipelines, one drawback of TPOT is that it requires relatively a lot of time for generating. So an idea came out of our mind: `What about hosting a competition between TPOT and manual-selected model?` One of our member (Eric) focused on TPOT and the other member (Mat) focused on manul-selected model.
+We have presented TPOT as a useful automated tool to generate ML pipelines, one drawback of TPOT is that it requires relatively a lot of time for generating. So an idea came to mind: `What about hosting a competition between TPOT and a manually-selected model?` One of our group members (Eric) focused on learning how to generate optimal machine learning pipelines using TPOT and the other group member (Matt) focused on manually selecting the best models.
 
 ### Data description
-There are 47 features for each data item, the dataset has a file called `ColumnDescription.txt` to describe each feature. We analyzed all features by two methods: 1) Manually categorize them. 2) Compute and plot features correlations. We provide feature names, descriptions, categories, keep or not, and reasons in belowing table.
+There are 47 features for each data item, the dataset has a file called `ColumnDescription.txt` to describe each feature. We analyzed all features by two methods: 1) Manually categorize them. 2) Compute and plot features correlations. We provide feature names, descriptions, categories, whether or not kept, and reasons for either keeping or droping the feature(s) in belowing table.
 
 Categories | Feature      | Description | Kept | Reasons
 -------| ----------- | ----------- | ---| ---
@@ -77,3 +77,25 @@ Categories | Feature      | Description | Kept | Reasons
 >[1] Randal S. Olson, Nathan Bartley, Ryan J. Urbanowicz, and Jason H. Moore (2016). Evaluation of a Tree-based Pipeline Optimization Tool for Automating Data Science. *Proceedings of GECCO 2016*, pages 485-492.
 >
 >[2] https://www.kaggle.com/akulbahl/covid19-airline-flight-delays-and-cancellations
+>[3] https://blog.quantinsti.com/gini-index/
+
+### Manually Selecting a Machine Learning Pipeline
+Within the dataset, the CANCELLED feature is binary (0 represents a flight that was not cancelled and 1 represents a flight that was cancelled). Due to this fact, I (Matt) decided to use machine learning algorithms that are good for supervised learning binary classification problems.
+
+#### Packages Used:
+For the core ML algorithms, we used `scikit-learn`.
+For plotting figures, we used `seaborn` and `matplotlib`.
+For dataset manipulations, we used `pandas` to transform the dataset into a dataframe.
+
+#### Algorithms Selected:
+- Naive Bayes Classifier
+-- Within Naive Bayes, there is a threshold (50%) on how likely an instance is to be classified as a value (0 or 1) in a binary classification problem. We chose to use Naive Bayes because we believe it might mirror how flights are cancelled in reality. Looking at all factors (weather, arrival times, departure times, etc.), if an airline team determines there is a greater than 50% chance of cancelling the flight, it probably will get cancelled. We hoped Naive Bayes could emulate this decision making process.
+
+- Decision Tree Classifier
+-- For the Decision Tree Classifier we used GINI Impurity. GINI impurity measures the degreee of probability of a particular variable being wrongly classified when it is randomly chosen [3]. We chose to use a decision tree because it seems like a very logical way on how to cancel a flight. For example, if it is snowing out, the tree would follow a certain path that could not be followed if it was not snowing. Every path will lead to a decision, whether to cancel the flight or not.
+
+- K Nearest Neighbors Classifier
+-- We decided to use the KNN classifier because it also seems intuitive. If three flights, with very similar attributes, are all classified as cancelled and a fourth flight comes along with similar attributes to those three flights, there is a high probability that flight will also be classified as cancelled. We also think this might mirror how flight cancellations are made in real life. For example, if Southwest Airlines, Hawaiian Airlines, and JetBlue cancel their flights from Denver, CO to Honolulu, HI because of snow, American Airlines will most likely also do the same.
+
+- Random Forest Classifier
+-- Similar to the Decision Tree Classifier, we used the Random Forest Classifier as a "more powerful" decision tree. A Random Forest Classifier is basically a tree of decision trees. The tree that has the highest accuracy is then chosen as the tree the Random Forest Classifier uses.
