@@ -21,63 +21,61 @@ We have presented TPOT as a useful automated tool to generate ML pipelines, one 
 There are 47 features for each data item, the dataset has a file called `ColumnDescription.txt` to describe each feature. We analyzed all features by two methods: 1) Manually categorize them. 2) Compute and plot features correlations. We provide feature names, descriptions, categories, whether or not kept, and reasons for either keeping or droping the feature(s) in belowing table.
 
 Categories | Feature      | Description | Kept | Reasons
--------| ----------- | ----------- | ---| ---
-| YEAR      | Year       |
-| QUARTER   | 1: Jan-Mar, 2: Apr-Jun, 3: Jul-Sep, 4: Oct-Dec|
-| MONTH      | Month of Year       |
-| DAY_OF_MONTH      | Date of Month       |
-| DAY_OF_WEEK      | Day of Week (1: Monday, 7: Sunday)       |
-| FL_DATE      | Full flight date (M/DD/YYYY)       |
-| MKT_UNIQUE_CARRIER      | Airline Carrier Code:<br> AA: American Airlines<br>AS: Alaska Airlines<br>	B6: JetBlue<br>	DL: Delta Air Lines<br>	F9: Frontier Airlines<br>	G4: Allegiant Air<br>	HA: Hawaiian Airlines<br>	NK: Spirit Airlines<br>	UA: United Airlines<br>	WN: Southwest Airlines |
-| MKT_CARRIER_FL_NUM      | Flight Number       |
-| TAIL_NUM      | Aircraft Tail Number (Usually starts with 'N')       |
-| ORIGIN      | Flight Departure 3-Letter Airport Abbreviation       |
-| ORIGIN_CITY_NAME      | Flight Departure City, State Names       |
-| ORIGIN_STATE_ABR      | Flight Departure 2-Letter State Abbreviation       |
-| ORIGIN_STATE_NM      | Flight Departure State Name       |
-| DEST      | Flight Arrival 3-Letter Airport Abbreviation       |
-| DEST_CITY_NAME      | Flight Arrival City, State Names       |
-| DEST_STATE_ABR      | Flight Arrival 2-Letter State Abbreviation       |
-| DEST_STATE_NM      | Flight Arrival State Name       |
-| CRS_DEP_TIME      | Scheduled Departure Time (HHMM) (Single or 2-Digit Values Represent 00:MM, e.g. 3 represents 00:03 or 12:03 AM)       |
-| DEP_TIME      | Actual Departure Time (HHMM)       |
-| DEP_DELAY      | Departure Delay (Difference Between Actual Departure Time and Scheduled Departure Time in Minutes)       |
-| DEP_DELAY_NEW      | Departure Delay Ignoring Early Departures (Listed as 0)       |
-| DEP_DEL15      | Departure Delay Greater Than 15 Minutes (0: Not Greater Than 15, 1: Greater Than 15)       |
-| DEP_DELAY_GROUP      | Departure Delay in Number of 15-minute increments Rounded Down (e.g. Early Departure (< 0) is a value of -1, 30 or 42 minutes is a value of 2)       |
-| DEP_TIME_BLK      | Scheduled Departure Time in Hourly Block (HHMM)       |
-| TAXI_OUT      | Time between Airplane Taxi from Gate and Takeoff (WHEELS_OFF) Time (in Minutes)       |
-| WHEELS_OFF      | Time of Airplane Takeoff (HHMM)       |
-| WHEELS_ON      | Time of Airplane Landing (HHMM)       |
-| TAXI_IN      | Time between Airplane Taxi to Gate and Landing (WHEELS_ON) Time (in Minutes)       |
-| CRS_ARR_TIME      | Scheduled Arrival Time (HHMM) (Single or 2-Digit Values Represent 00:MM, e.g. 3 represents 00:03 or 12:03 AM)       |
-| ARR_TIME      | Actual Arrival Time (HHMM)       |
-| ARR_DELAY      | Arrival Delay (Difference Between Actual Arrival Time and Scheduled Arrival Time in Minutes)       |
-| ARR_DELAY_NEW      | Arrival Delay Ignoring Early Arrivals (Listed as 0)       |
-| ARR_DEL15      | Arrival Delay Greater Than 15 Minutes (0: Not Greater Than 15, 1: Greater Than 15)       |
-| ARR_DELAY_GROUP      | Arrival Delay in Number of 15-minute increments Rounded Down (e.g. Early Arrival (< 0) is a value of -1, 30 or 42 minutes is a value of 2)       |
-| ARR_TIME_BLK      | Scheduled Arrival Time in Hourly Block (HHMM)       |
-| CANCELLED      | 0: Flight Not Cancelled, 1: Flight Cancelled       |
-| CANCELLATION_CODE      | Reason for Cancellation - if Cancelled, Letter Present (A: Carrier, B: Weather, C: National Aviation System, D: Security)       |
-| CRS_ELAPSED_TIME      | Scheduled Total Flight Time (in Minutes)       |
-| ACTUAL_ELAPSED_TIME      | Actual Total Elapsed Flight Time (in Minutes)       |
-| AIR_TIME      | Actual Total Elapsed Time Airplane in the Air (in Minutes)       |
-| DISTANCE      | Distance Between Departure and Arrival Airports (in Miles)       |
-| DISTANCE_GROUP      | Distance Between Departure and Arrival Airports in Number of 250-Mile increments Rounded Down (e.g. 400 miles is a value of 1)       |
-| CARRIER_DELAY      | Carrier Delay (in Minutes)       |
-| WEATHER_DELAY      | Weather Delay (in Minutes)       |
-| NAS_DELAY      | National Aviation System Delay (in Minutes)       |
-| SECURITY_DELAY      | Security Delay (in Minutes)       |
-| LATE_AIRCRAFT_DELAY      | Late Aircraft Delay (in Minutes)       |
+---| --- | --- | ---| ---
+<img width=200/>|<img width=500/>|<img width=200/>|<img width=200/>|<img width=200/>
+Time | YEAR      | Year       |CPU-TPOT<br>GPU-TPOT
+Time| QUARTER   | 1: Jan-Mar, 2: Apr-Jun, 3: Jul-Sep, 4: Oct-Dec|
+Time| MONTH      | Month of Year       |
+Time| DAY_OF_MONTH      | Date of Month       |
+Time| DAY_OF_WEEK      | Day of Week (1: Monday, 7: Sunday)       |
+Time| FL_DATE      | Full flight date (M/DD/YYYY)       |
+Identification| MKT_UNIQUE_CARRIER      | Airline Carrier Code:<br> AA: American Airlines<br>AS: Alaska Airlines<br>	B6: JetBlue<br>	DL: Delta Air Lines<br>	F9: Frontier Airlines<br>	G4: Allegiant Air<br>	HA: Hawaiian Airlines<br>	NK: Spirit Airlines<br>	UA: United Airlines<br>	WN: Southwest Airlines |
+Identification| MKT_CARRIER_FL_NUM      | Flight Number       |
+Identification| TAIL_NUM      | Aircraft Tail Number (Usually starts with 'N')       |
+Location| ORIGIN      | Flight Departure 3-Letter Airport Abbreviation       |
+Location| ORIGIN_CITY_NAME      | Flight Departure City, State Names       |
+Location| ORIGIN_STATE_ABR      | Flight Departure 2-Letter State Abbreviation       |
+Location| ORIGIN_STATE_NM      | Flight Departure State Name       |
+Location| DEST      | Flight Arrival 3-Letter Airport Abbreviation       |
+Location| DEST_CITY_NAME      | Flight Arrival City, State Names       |
+Location| DEST_STATE_ABR      | Flight Arrival 2-Letter State Abbreviation       |
+Location| DEST_STATE_NM      | Flight Arrival State Name       |
+Departure| CRS_DEP_TIME      | Scheduled Departure Time (HHMM) (Single or 2-Digit Values Represent 00:MM, e.g. 3 represents 00:03 or 12:03 AM)       |
+Departure| DEP_TIME      | Actual Departure Time (HHMM)       |
+Departure| DEP_DELAY      | Departure Delay (Difference Between Actual Departure Time and Scheduled Departure Time in Minutes)       |
+Departure| DEP_DELAY_NEW      | Departure Delay Ignoring Early Departures (Listed as 0)       |
+Departure| DEP_DEL15      | Departure Delay Greater Than 15 Minutes (0: Not Greater Than 15, 1: Greater Than 15)       |
+Departure| DEP_DELAY_GROUP      | Departure Delay in Number of 15-minute increments Rounded Down (e.g. Early Departure (< 0) is a value of -1, 30 or 42 minutes is a value of 2)       |
+Departure| DEP_TIME_BLK      | Scheduled Departure Time in Hourly Block (HHMM)       |
+Departure| TAXI_OUT      | Time between Airplane Taxi from Gate and Takeoff (WHEELS_OFF) Time (in Minutes)       |
+Departure| WHEELS_OFF      | Time of Airplane Takeoff (HHMM)       |
+Arrival| WHEELS_ON      | Time of Airplane Landing (HHMM)       |
+Arrival| TAXI_IN      | Time between Airplane Taxi to Gate and Landing (WHEELS_ON) Time (in Minutes)       |
+Arrival| CRS_ARR_TIME      | Scheduled Arrival Time (HHMM) (Single or 2-Digit Values Represent 00:MM, e.g. 3 represents 00:03 or 12:03 AM)       |
+Arrival| ARR_TIME      | Actual Arrival Time (HHMM)       |
+Arrival| ARR_DELAY      | Arrival Delay (Difference Between Actual Arrival Time and Scheduled Arrival Time in Minutes)       |
+Arrival| ARR_DELAY_NEW      | Arrival Delay Ignoring Early Arrivals (Listed as 0)       |
+Arrival| ARR_DEL15      | Arrival Delay Greater Than 15 Minutes (0: Not Greater Than 15, 1: Greater Than 15)       |
+Arrival| ARR_DELAY_GROUP      | Arrival Delay in Number of 15-minute increments Rounded Down (e.g. Early Arrival (< 0) is a value of -1, 30 or 42 minutes is a value of 2)       |
+Arrival| ARR_TIME_BLK      | Scheduled Arrival Time in Hourly Block (HHMM)       |
+Cancellation| CANCELLED      | 0: Flight Not Cancelled, 1: Flight Cancelled       |
+Cancellation| CANCELLATION_CODE      | Reason for Cancellation - if Cancelled, Letter Present (A: Carrier, B: Weather, C: National Aviation System, D: Security)       |
+On flight| CRS_ELAPSED_TIME      | Scheduled Total Flight Time (in Minutes)       |
+On flight| ACTUAL_ELAPSED_TIME      | Actual Total Elapsed Flight Time (in Minutes)       |
+On flight| AIR_TIME      | Actual Total Elapsed Time Airplane in the Air (in Minutes)       |
+On flight| DISTANCE      | Distance Between Departure and Arrival Airports (in Miles)       |
+On flight| DISTANCE_GROUP      | Distance Between Departure and Arrival Airports in Number of 250-Mile increments Rounded Down (e.g. 400 miles is a value of 1)       |
+Delay| CARRIER_DELAY      | Carrier Delay (in Minutes)       |
+Delay| WEATHER_DELAY      | Weather Delay (in Minutes)       |
+Delay| NAS_DELAY      | National Aviation System Delay (in Minutes)       |
+Delay| SECURITY_DELAY      | Security Delay (in Minutes)       |
+Delay| LATE_AIRCRAFT_DELAY      | Late Aircraft Delay (in Minutes)       |
 
 ### CPU-based TPOT
+We firstly implemented what we have read in the TPOT paper [1] - the CPU-based TPOT, the notebook could be found in this repo as `CISC849_TPOT_CPU.ipynb`.
+
 ### GPU-based TPOT
 
-
->[1] Randal S. Olson, Nathan Bartley, Ryan J. Urbanowicz, and Jason H. Moore (2016). Evaluation of a Tree-based Pipeline Optimization Tool for Automating Data Science. *Proceedings of GECCO 2016*, pages 485-492.
->
->[2] https://www.kaggle.com/akulbahl/covid19-airline-flight-delays-and-cancellations
->[3] https://blog.quantinsti.com/gini-index/
 
 ### Manually Selecting a Machine Learning Pipeline
 Within the dataset, the CANCELLED feature is binary (0 represents a flight that was not cancelled and 1 represents a flight that was cancelled). Due to this fact, I (Matt) decided to use machine learning algorithms that are good for supervised learning binary classification problems.
@@ -99,3 +97,10 @@ For dataset manipulations, we used `pandas` to transform the dataset into a data
 
 - Random Forest Classifier
 -- Similar to the Decision Tree Classifier, we used the Random Forest Classifier as a "more powerful" decision tree. A Random Forest Classifier is basically a tree of decision trees. The tree that has the highest accuracy is then chosen as the tree the Random Forest Classifier uses.
+
+
+
+>[1] Randal S. Olson, Nathan Bartley, Ryan J. Urbanowicz, and Jason H. Moore (2016). Evaluation of a Tree-based Pipeline Optimization Tool for Automating Data Science. *Proceedings of GECCO 2016*, pages 485-492.
+>
+>[2] https://www.kaggle.com/akulbahl/covid19-airline-flight-delays-and-cancellations
+>[3] https://blog.quantinsti.com/gini-index/
