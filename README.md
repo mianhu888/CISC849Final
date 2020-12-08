@@ -125,9 +125,9 @@ Random Forest Classifier| 93.28%
 Using 5-fold cross validation, we achieved the following results with only the default classifiers:
 ML Method | Accuracy
 ---| ---
-Naive Bayes Classifier| %
-Decision Tree Classifier| %
-K-Nearest Neighbor Classifier| %
+Naive Bayes Classifier| 73.63%
+Decision Tree Classifier| 68.63%
+K-Nearest Neighbor Classifier| 73.63%
 Random Forest Classifier| 76.25%
 
 >[1] Randal S. Olson, Nathan Bartley, Ryan J. Urbanowicz, and Jason H. Moore (2016). Evaluation of a Tree-based Pipeline Optimization Tool for Automating Data Science. *Proceedings of GECCO 2016*, pages 485-492.
