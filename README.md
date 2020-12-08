@@ -109,7 +109,26 @@ For dataset manipulations, we used `pandas` to transform the dataset into a data
 - Random Forest Classifier
 -- Similar to the Decision Tree Classifier, we used the Random Forest Classifier as a "more powerful" decision tree. A Random Forest Classifier is basically a tree of decision trees. The tree that has the highest accuracy is then chosen as the tree the Random Forest Classifier uses.
 
+#### Methodology
+To start, we wanted to use the default classifiers scikit-learn offered. We figured based on the results from the default configurations, we could then tune the hyperparameters to increase our accuracy as needed. To divide up the dataset, we did so two ways. First, we did a regular train-test split, thus dividing our data into a training set and a testing set. We did this using scikit-learn's `train_test_split` function. Second, we used k-fold cross validation with k=5. We decided to test both ways because the dataset is extremely unbalanced. As a whole, the dataset only contains 282,926 cancelled flights, or just over 10% of the data given to us! By using k-fold cross validation, we can verify if the accuracy we achieve from the train-test split is, well, accurate.
 
+#### Results using training set and testing set
+Using the train-test split, we achieved the following results with only the default classifiers:
+ML Method | Accuracy
+---| --- 
+Naive Bayes Classifier| 89.36%
+Decision Tree Classifier| 91.66%
+K-Nearest Neighbor Classifier| 90.95%
+Random Forest Classifier| 93.28%
+
+#### Results using k-fold Cross Validation with k=5
+Using 5-fold cross validation, we achieved the following results with only the default classifiers:
+ML Method | Accuracy
+---| ---
+Naive Bayes Classifier| %
+Decision Tree Classifier| %
+K-Nearest Neighbor Classifier| %
+Random Forest Classifier| 76.25%
 
 >[1] Randal S. Olson, Nathan Bartley, Ryan J. Urbanowicz, and Jason H. Moore (2016). Evaluation of a Tree-based Pipeline Optimization Tool for Automating Data Science. *Proceedings of GECCO 2016*, pages 485-492.
 >
