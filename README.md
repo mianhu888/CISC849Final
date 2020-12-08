@@ -116,19 +116,19 @@ To start, we wanted to use the default classifiers scikit-learn offered. We figu
 Using the train-test split, we achieved the following results with only the default classifiers:
 ML Method | Accuracy
 ---| --- 
-Naive Bayes Classifier| 89.36%
-Decision Tree Classifier| 91.66%
-K-Nearest Neighbor Classifier| 90.95%
-Random Forest Classifier| 93.28%
+Naive Bayes Classifier| 89.35%
+Decision Tree Classifier| 91.61%
+K-Nearest Neighbor Classifier| 90.94%
+Random Forest Classifier| 93.30%
 
-#### Results using k-fold Cross Validation with k=5
+#### Results using k-fold Cross Validation
 Using 5-fold cross validation, we achieved the following results with only the default classifiers:
-ML Method | Accuracy
----| ---
-Naive Bayes Classifier| 73.63%
-Decision Tree Classifier| 68.63%
-K-Nearest Neighbor Classifier| 73.63%
-Random Forest Classifier| 76.25%
+ML Method | k=5 Accuracy|  k=10 Accuracy
+---| --- | ---
+Naive Bayes Classifier| 73.63% | 86.69%
+Decision Tree Classifier| 68.63% | 67.44%
+K-Nearest Neighbor Classifier| 73.63% | 86.69%
+Random Forest Classifier| 76.25% | 75.40%
 
 >[1] Randal S. Olson, Nathan Bartley, Ryan J. Urbanowicz, and Jason H. Moore (2016). Evaluation of a Tree-based Pipeline Optimization Tool for Automating Data Science. *Proceedings of GECCO 2016*, pages 485-492.
 >
