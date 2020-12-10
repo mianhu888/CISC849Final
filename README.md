@@ -17,6 +17,13 @@ As COVID-19 is still impacting the entire world (at the time of writing, Decembe
 
 We have presented TPOT as a useful automated tool to generate ML pipelines, one drawback of TPOT is that it requires relatively a lot of time for generating. So an idea came to mind: `What about hosting a competition between TPOT and a manually-selected model?` One of our group members (Eric) focused on learning how to generate optimal machine learning pipelines using TPOT and the other group member (Matt) focused on manually selecting the best models.
 
+### Goal
+Our project had the following goals:
+1.) Accurately predict airline flight cancellations during the COVID-19 pandemic from Jan. 2020 - Jun. 2020
+2.) Become familiar with TPOT and see if TPOT can give a good machine learning pipeline that will help us achieve Goal 1.
+3.) Have one group member not use TPOT and not look at the TPOT results and see if they can create a better machine learning pipeline than TPOT.
+  a.) It is worth noting that this goal is measured in terms of accuracy on the data.
+
 ### Data description
 There are 47 features for each data item, the dataset has a file called `ColumnDescription.txt` to describe each feature. We analyzed all features by two methods: 1) Manually categorize them. 2) Compute and plot features correlations. We provide categories, feature names, descriptions, and whether or not kept in belowing table, where `{1}` indicates CPU-TPOT, `{2}` indicates GPU-TPOT.
 
