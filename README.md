@@ -1,5 +1,9 @@
 # CISC849Final
+
+### Take away points
 This repo is used for final project of CISC849, a graduate level seminar offered at the University of Delaware. Our group consists of Matt Leinhauser and Eric (Yifan) Zhang.
+
+We hosted a competition between automated machine learning pipeline generating tools and manually selected model. We have explored the usage of TPOT on both CPU and GPU, we also explicitly selected models from several basic machine learning algorithms. Besides the competition, we discussed data balancing technique to achieve better performance. This project could give an example of the comparison between auto ML tools and human selection on a same data science task.
 
 ### Context of this project - TPOT
 This course requires each group reading a paper (or article) related to data science and presenting it formally to the entire class. We chose an article about TPOT [1], which is a Python Automated Machine Learning tool that optimizes machine learning pipelines using genetic programming.
@@ -89,7 +93,7 @@ After 6 hours running, the TPOT has selected a pipeline of `KNeighborsClassifier
 #### GPU-based TPOT
 We also found a article called `Faster AutoML with TPOT and RAPIDS`[4]. In this article, the author described that TPOT could be acceralted by GPU and achieve better performance with less time. We then have implemented GPU-acceralted TOPT on Google Colab. The GPU in Colab was `Tesla T4`.
 
-We have also kept different features with previous CPU-TPOT, check above table for details. After one hour running, we have achieved 92.79% accuracy. The
+We have also kept different features with previous CPU-TPOT, check above table for details. After one hour running, we have achieved 92.79% accuracy.
 
 #### One hot encoding and data balancing
 According to Buda (2018) comprehensive review on data imbalancing solutions [5], daba imbalancing could cause prediction inaccurate. In this data set, the cancelled flights only occupy ~10%, causing data imbalancing. Thus, we considered undersampling for data balancing. Additionally, we have tried one hot encoding for feature engineering. The code could be viewed in `CISC849_TPOT_GPU.ipynb`.
@@ -122,7 +126,7 @@ To start, we wanted to use the default classifiers scikit-learn offered. We figu
 #### Results using training set and testing set
 Using the train-test split, we achieved the following results with only the default classifiers:
 ML Method | Accuracy
----| --- 
+---| ---
 Naive Bayes Classifier| 89.35%
 Decision Tree Classifier| 91.61%
 K-Nearest Neighbor Classifier| 90.94%
