@@ -141,6 +141,17 @@ Decision Tree Classifier| 68.63% | 67.44%
 K-Nearest Neighbor Classifier| 73.63% | 86.69%
 Random Forest Classifier| 76.25% | 75.40%
 
+### Conclusions
+Our project had three goals: 
+1.) Accurately predict airline flight cancellations during the COVID-19 pandemic from Jan. 2020 - Jun. 2020
+2.) Become familiar with TPOT and see if TPOT can give a good machine learning pipeline that will help us achieve Goal 1.
+3.) Have one group member not use TPOT and not look at the TPOT results and see if they can create a better machine learning pipeline than TPOT.
+  a.) It is worth noting that this goal is measured in terms of accuracy on the data.
+
+We were able to achieve all three of these goals in the following ways. For Goal #1, we demonstrated that using TPOT and manually creating a machine learning pipeline, we were able to create a model that can predict airline flight cancellations during the COVID-19 pandemic. While the accuracy of our results varies, we have demonstrated that our models perform much better than a random guess. Second, we achieved goal number two by really exploring TPOT. Eric was able to get TPOT running on the CPU within Google Colab and his local machine. In addition to just using TPOT on the CPU, he also figured out how to run TPOT on a GPU using the cuML library from RAPIDS [6]. Using TPOT on the GPU sped up the time taken to create an accurate predictive model and it also predicted a different pipeline to use than the CPU run of TPOT. Finally, we were able to demonstrate that Matt created a machine learning pipeline that scored higher accuracy than the pipeline TPOT generated (which was goal #3). Coming together at the after each of us completed our parts offered us great insights into how to solve the problem at hand in a different way.
+
+From this project, we learned how to use TPOT on both the CPU and GPU and learned how it creates effective machine learning pipelines. We also learned how to perform effective feature engineering on a dataset. If we had more time with this project, we would have liked to continue to find the most optimal features. Similarly, we learned to filter out which algorithms would be useful for this problem, and which would not be useful, by truly understanding the data in the dataset. For the future, we are interested in exploring if our model can generalize to future pandemics (and not just the COVID-19 pandemic) and seeing if we can generate more accurate results by further exploring the use of a one-hot-encoder on the dataset, performing additional feature engineering and pre-processing, and creating a method to make the dataset more balanced in terms of cancelled flights and flights that were not cancelled.
+
 >[1] Randal S. Olson, Nathan Bartley, Ryan J. Urbanowicz, and Jason H. Moore (2016). Evaluation of a Tree-based Pipeline Optimization Tool for Automating Data Science. *Proceedings of GECCO 2016*, pages 485-492.
 >
 >[2] https://www.kaggle.com/akulbahl/covid19-airline-flight-delays-and-cancellations
@@ -150,3 +161,5 @@ Random Forest Classifier| 76.25% | 75.40%
 >[4] https://medium.com/rapids-ai/faster-automl-with-tpot-and-rapids-758455cd89e5
 >
 >[5] Buda, M., Maki, A., & Mazurowski, M. A. (2018). A systematic study of the class imbalance problem in convolutional neural networks. *Neural Networks*, 106, 249-259.
+>
+>[6] https://github.com/rapidsai/cuml
