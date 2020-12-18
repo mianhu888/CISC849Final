@@ -1,4 +1,4 @@
-# CISC849Final
+# Predicting Flight Cancellations During the COVID-19 Pandemic
 
 ### Take away points
 This repo is used for final project of CISC849, a graduate level seminar offered at the University of Delaware. Our group consists of Matt Leinhauser and Eric (Yifan) Zhang.
