@@ -1,7 +1,7 @@
 # Predicting Flight Cancellations During the COVID-19 Pandemic
 
 ### Take away points
-This repo is used for final project of CISC849, a graduate level seminar offered at the University of Delaware. Our group consists of Matt Leinhauser and Eric (Yifan) Zhang.
+This repo is used for final project of CISC849, Fall 2020, a graduate level seminar offered at the University of Delaware. Our group consists of Matt Leinhauser and Eric (Yifan) Zhang.
 
 We hosted a competition between automated machine learning pipeline generating tools and manually selected model. We have explored the usage of TPOT on both CPU and GPU, we also explicitly selected models from several basic machine learning algorithms. Besides the competition, we discussed data balancing technique to achieve better performance. This project could give an example of the comparison between auto ML tools and human selection on a same data science task.
 
